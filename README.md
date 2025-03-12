@@ -26,6 +26,7 @@ No modules.
 | [azuread_administrative_unit.au](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/administrative_unit) | resource |
 | [azuread_administrative_unit_member.member](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/administrative_unit_member) | resource |
 | [azuread_administrative_unit_role_member.rm](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/administrative_unit_role_member) | resource |
+| [azuread_directory_roles.current](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/directory_roles) | data source |
 
 ## Inputs
 
@@ -36,9 +37,10 @@ No modules.
 | <a name="input_group"></a> [group](#input\_group) | (Required) Character string defining the group for the target subscription | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Azure location for the VM | `string` | `"canadacentral"` | no |
 | <a name="input_project"></a> [project](#input\_project) | (Required) Character string defining the project for the target subscription | `string` | n/a | yes |
-| <a name="input_tags"></a> [tags](#input\_tags) | Tags that will be applied to every associated VM resource | `map(string)` | `{}` | no |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_azuread_administrative_unit_object"></a> [azuread\_administrative\_unit\_object](#output\_azuread\_administrative\_unit\_object) | The AzureAD Administrative Unit object |
 <!-- END_TF_DOCS -->
