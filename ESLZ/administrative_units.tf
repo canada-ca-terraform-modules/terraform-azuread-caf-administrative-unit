@@ -12,5 +12,4 @@ module "administrative_units" {
   group               = var.group
   project             = var.project
   administrative_unit = each.value
-  # userDefinedString = each.key
 }

@@ -1,9 +1,4 @@
-# output "aad_app_object" {
-#   value       = azuread_application.aad_app
-#   description = "Azure AD Application object"
-# }
-
-# output "aad_sp_object" {
-#   value       = azuread_service_principal.aad_sp
-#   description = "Azure AD Service Principal object"
-# }
+output "azuread_administrative_unit_object" {
+  value       = azuread_administrative_unit.au
+  description = "The AzureAD Administrative Unit object"
+}

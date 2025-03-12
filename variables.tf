@@ -4,12 +4,6 @@ variable "location" {
   default     = "canadacentral"
 }
 
-variable "tags" {
-  description = "Tags that will be applied to every associated VM resource"
-  type        = map(string)
-  default     = {}
-}
-
 variable "env" {
   description = "(Required) 4 character string defining the environment name prefix for the VM"
   type        = string

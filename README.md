@@ -1,8 +1,8 @@
-# AzureRM App Registration V2
+# AzureAD Administrative Unit
 
 ## Terraform variables for this module
 
-[./ESLZ/app_registrationV2.tfvars](./ESLZ/app_registrationV2.tfvars)
+[./ESLZ/administrative_units.tfvars](./ESLZ/administrative_unit.tfvars)
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
