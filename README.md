@@ -2,7 +2,7 @@
 
 ## Terraform variables for this module
 
-[./ESLZ/administrative_units.tfvars](./ESLZ/administrative_unit.tfvars)
+[./ESLZ/administrative_units.tfvars](./ESLZ/administrative_units.tfvars)
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

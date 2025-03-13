@@ -1,7 +1,7 @@
 resource "azuread_administrative_unit" "au" {
   display_name              = local.au_name
   description               = try(var.administrative_unit.description, "")
-  hidden_membership_enabled = try(var.administrative_unit.hidden_membership_enabled, true)
+  hidden_membership_enabled = try(var.administrative_unit.hidden_membership_enabled, false)
 }
 
 resource "azuread_administrative_unit_member" "member" {
