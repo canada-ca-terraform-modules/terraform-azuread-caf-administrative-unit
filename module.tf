@@ -27,7 +27,7 @@ locals {
   role_member_list = flatten([
     for role_name, role_data in try(var.administrative_unit.role_members, {}) : [
       for member_id in role_data.member_object_ids : {
-        key   = "${role_name}-${member_id}"
+        key       = "${role_name}-${member_id}"
         role_name = role_name
         member_id = member_id
       }

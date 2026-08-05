@@ -1,21 +1,22 @@
+# tflint-ignore: terraform_unused_declarations
 variable "location" {
-  description = "Azure location for the VM"
+  description = "(Optional) Azure location — retained for backward compatibility, not used by this module (Administrative Units are a global Azure AD resource with no location)"
   type        = string
   default     = "canadacentral"
 }
 
 variable "env" {
-  description = "(Required) 4 character string defining the environment name prefix for the VM"
+  description = "(Required) 4 character string defining the environment name prefix used to build the default Administrative Unit display name"
   type        = string
 }
 
 variable "group" {
-  description = "(Required) Character string defining the group for the target subscription"
+  description = "(Required) Character string defining the group used to build the default Administrative Unit display name"
   type        = string
 }
 
 variable "project" {
-  description = "(Required) Character string defining the project for the target subscription"
+  description = "(Required) Character string defining the project used to build the default Administrative Unit display name"
   type        = string
 }
 
