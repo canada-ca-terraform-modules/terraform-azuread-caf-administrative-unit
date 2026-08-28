@@ -32,7 +32,7 @@ account that already holds the required Graph role.
 | File | Purpose |
 |---|---|
 | `main.tf` | Module block with `source = "../../"` (a relative path - this harness always tests the checked-out code), the `azuread` provider block, and an empty `backend "local" {}` block (no `-backend-config` needed for a single manual run - state stays wherever `terraform init` puts it by default, or pass your own `-backend-config="path=..."` if you want it elsewhere). |
-| `variables.tf` | `env`, `group`, `project` (all default to a `livetest`-style value), `pr_number` (default `"manual"`, unused directly by this harness - see note below), and `administrative_unit` (typed `any`, passed straight through to the module). |
+| `variables.tf` | `env`, `group`, `project` (all default to a `livetest`-style value) and `administrative_unit` (typed `any`, passed straight through to the module). |
 | `config/administrative_unit.tfvars` | One representative fixture, adapted from the `L2_test_administrative_unit` upgrade-probe harness: `custom_name`, `description`, `hidden_membership_enabled`. No `members`/`role_members` exercised - the mock test suite already covers that matrix. |
 
 No Terragrunt anywhere under this directory - a single harness per repo has
@@ -61,12 +61,12 @@ terraform destroy -var-file=config/administrative_unit.tfvars
 No `.tfstate` file is committed under `test/live/` - keep each run
 ephemeral, and destroy before starting a new one.
 
-## Note on `pr_number` and concurrent runs
+## Note on concurrent runs
 
 Unlike modules with a real Azure resource dependency (e.g. a resource group
 whose name is suffixed per-PR), this harness's only collision surface is
 the Administrative Unit's own tenant-wide `custom_name`. The tracked
 fixture already uses a distinct `-livetest` suffix. If you need to run this
 harness concurrently with someone else (or alongside a leftover run of your
-own), edit `custom_name` in a local, uncommitted copy of the tfvars file
-rather than relying on `var.pr_number` to disambiguate it for you.
+own), edit `custom_name` in a local, uncommitted copy of the tfvars file to
+disambiguate it.
